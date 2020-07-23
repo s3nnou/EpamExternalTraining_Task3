@@ -9,9 +9,23 @@ namespace epam_task_3._1
     {
         public Triangle(double a, double b, double c)
         {
-            A = a;
-            B = b;
-            C = c;
+            if (A > 0 && B > 0 && C > 0)
+            {
+                if(A + B > C && B + C > A && C + A > B)
+                {
+                    A = a;
+                    B = b;
+                    C = c;
+                }
+                else
+                {
+                    throw new Exception("Such Triangle cannot exist");
+                }
+            }
+            else
+            {
+                throw new Exception("Negative sides cannot exist");
+            }
         }
 
         public double A { get; set ; }
@@ -38,11 +52,9 @@ namespace epam_task_3._1
 
     public class PaperTriangle: Triangle, IPaper
     {
-        private Color _color;
-
         public PaperTriangle(double A, double B, double C, Color color) : base(A, B, C)
         {
-            _color = color;
+            Color = color;
             IsColoredAgain = false;
         }
 
@@ -66,7 +78,7 @@ namespace epam_task_3._1
             }
         }
 
-        public Color Color { get => _color; set => _color = value; }
+        public Color Color { get; set; }
 
         public bool IsColoredAgain { get; set; }
 

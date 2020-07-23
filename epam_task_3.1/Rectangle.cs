@@ -9,10 +9,24 @@ namespace epam_task_3._1
     {
         public Rectangle(double a, double b, double c, double d)
         {
-            A = a;
-            B = b;
-            C = c;
-            D = d;
+            if(A > 0 && B > 0 && C > 0 && D > 0)
+            {
+                if (A + B + C > D && B + C + D > A && C + D + A > B && A + B + D > C)
+                {
+                    A = a;
+                    B = b;
+                    C = c;
+                    D = d;
+                }
+                else
+                {
+                    throw new Exception("Such Rectangle cannot exist");
+                }
+            }
+            else
+            {
+                throw new Exception("Negative sides cannot exist");
+            }
         }
 
         public double A { get; set; }
@@ -40,11 +54,9 @@ namespace epam_task_3._1
 
     public class PaperRectangle:Rectangle, IPaper
     {
-        private Color _color;
-
         public PaperRectangle(double A, double B, double C, double D, Color color) : base(A, B, C, D)
         {
-            _color = color;
+            Color = color;
             IsColoredAgain = false;
         }
 
@@ -68,7 +80,7 @@ namespace epam_task_3._1
             }
         }
 
-        public Color Color { get => _color; set => _color = value; }
+        public Color Color { get; set; }
 
         public bool IsColoredAgain { get; set; }
 

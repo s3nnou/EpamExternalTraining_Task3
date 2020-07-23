@@ -15,7 +15,7 @@ namespace epam_task_3._1
             }
             else
             {
-                throw new Exception("R cannot be equal to 0");
+                throw new Exception("R cannot be 0 or below");
             }
         }
 
@@ -41,11 +41,10 @@ namespace epam_task_3._1
 
     public class PaperCircle:Circle, IPaper
     {
-        private Color _color;
         
         public PaperCircle(double _r, Color color): base(_r)
         {
-            _color = color;
+            Color = color;
             IsColoredAgain = false;
         }
 
@@ -69,7 +68,7 @@ namespace epam_task_3._1
             }
         }
 
-        public Color Color { get => _color; set => _color = value; }
+        public Color Color { get; set; }
 
         public bool IsColoredAgain { get; set; }
 
