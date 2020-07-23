@@ -2,7 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>epam_task_3._1</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ColorsLibrary\ColorsLibrary.csproj" />
+  </ItemGroup>
 
 </Project>
