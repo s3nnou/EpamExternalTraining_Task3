@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CollectionLibrary\CollectionLibrary.csproj" />
+    <ProjectReference Include="..\ColorsLibrary\ColorsLibrary.csproj" />
+    <ProjectReference Include="..\epam_task_3.1\FiguresLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
