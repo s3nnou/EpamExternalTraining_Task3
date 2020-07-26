@@ -1168,7 +1168,6 @@ namespace UnitTest
             double t_a = 10;
             double t_b = 10;
             double t_c = 10;
-            Color t_color = Color.green;
             FilmTriangle t_triangle = new FilmTriangle(t_a, t_b, t_c);
 
             double t_a1 = 2;
@@ -1182,7 +1181,6 @@ namespace UnitTest
             double ex_b = 5;
             double ex_c = 2;
             double ex_d = 5;
-            Color ex_color = Color.green;
             FilmRectangle ex_rectangle = new FilmRectangle(ex_a, ex_b, ex_c, ex_d);
 
             Assert.IsTrue(ex_rectangle.Equals(t_rectangle));
