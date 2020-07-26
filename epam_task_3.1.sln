@@ -21,6 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileExtensionsLibrary", "Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsersLibrary", "ParsersLibrary\ParsersLibrary.csproj", "{D64FF798-34C0-4882-B73C-190ADAB93361}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Res", "Res", "{4A4DCA4C-4313-4023-B6A0-6C79491F382D}"
+	ProjectSection(SolutionItems) = preProject
+		Box.xml = Box.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

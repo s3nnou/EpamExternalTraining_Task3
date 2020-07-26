@@ -9,9 +9,9 @@ namespace epam_task_3._1
     {
         public Triangle(double a, double b, double c)
         {
-            if (A > 0 && B > 0 && C > 0)
+            if (a > 0 && b > 0 && c > 0)
             {
-                if(A + B > C && B + C > A && C + A > B)
+                if(a + b > c && b + c > a && c + a > b)
                 {
                     A = a;
                     B = b;

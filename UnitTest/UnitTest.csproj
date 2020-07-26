@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CollectionLibrary\CollectionLibrary.csproj">
+      <Project>{6286d0fb-e7c0-4326-9348-e4a47813d477}</Project>
+      <Name>CollectionLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ColorsLibrary\ColorsLibrary.csproj">
       <Project>{e1163c97-b112-4034-a50b-1d5790938c11}</Project>
       <Name>ColorsLibrary</Name>
@@ -64,9 +68,17 @@
       <Project>{6555e67a-83f7-44aa-b5db-73612c50abf5}</Project>
       <Name>FiguresLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FileExtensionsLibrary\FileExtensionsLibrary.csproj">
+      <Project>{aa156aed-ead9-4432-baa7-57d7b14ae89b}</Project>
+      <Name>FileExtensionsLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaterialsLibrary\MaterialsLibrary.csproj">
       <Project>{8fbcabf6-d67a-4012-87f5-f1718b03d198}</Project>
       <Name>MaterialsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParsersLibrary\ParsersLibrary.csproj">
+      <Project>{d64ff798-34c0-4882-b73c-190adab93361}</Project>
+      <Name>ParsersLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

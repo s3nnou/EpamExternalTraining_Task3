@@ -9,9 +9,9 @@ namespace epam_task_3._1
     {
         public Rectangle(double a, double b, double c, double d)
         {
-            if(A > 0 && B > 0 && C > 0 && D > 0)
+            if(a > 0 && b > 0 && c > 0 && d > 0)
             {
-                if (A + B + C > D && B + C + D > A && C + D + A > B && A + B + D > C)
+                if (a + b + c > d && b + c + d > a && c + d + a > b && a + b + d > c)
                 {
                     A = a;
                     B = b;
