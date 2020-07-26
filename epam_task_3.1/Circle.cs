@@ -1,7 +1,7 @@
 ﻿using MaterialsLibrary;
 using System;
 
-namespace epam_task_3._1
+namespace Figures
 {
     public class Circle: Figure
     {

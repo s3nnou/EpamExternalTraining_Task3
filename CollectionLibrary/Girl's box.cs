@@ -1,4 +1,4 @@
-﻿using epam_task_3._1;
+﻿using Figures;
 using MaterialsLibrary;
 using System;
 using System.Collections.Generic;
@@ -21,6 +21,8 @@ namespace CollectionLibrary
                 content[index] = value;
             }
         }
+
+        public Figure[] Items => content;
 
         public int Size
         {

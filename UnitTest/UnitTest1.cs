@@ -1,6 +1,6 @@
 ﻿using System;
 using CollectionLibrary;
-using epam_task_3._1;
+using Figures;
 using FileExtensionsLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,8 +16,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -34,8 +34,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -52,8 +52,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -72,8 +72,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -93,8 +93,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -115,8 +115,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -137,8 +137,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXMLStream(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByStreamReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -154,8 +154,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXMLStream(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByStreamReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -172,8 +172,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -191,8 +191,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -212,8 +212,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -235,8 +235,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -258,8 +258,8 @@ namespace UnitTest
 
             Box boxTest = new Box();
 
-            FileExtensions fileExtensions = new FileExtensions();
-            boxTest = fileExtensions.ReadXML(path);
+            FileReader fileExtensions = new FileReader();
+            boxTest = fileExtensions.ReadXmlByXmlTextReader(path);
 
             Box boxToAssure = new Box();
             boxToAssure[0] = new PaperCircle(5, Color.red);
@@ -273,5 +273,6 @@ namespace UnitTest
             Assert.IsTrue(boxToAssure[6].Equals(boxTest[6]));
 
         }
+
     }
 }

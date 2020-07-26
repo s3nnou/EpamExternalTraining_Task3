@@ -1,4 +1,4 @@
-﻿using epam_task_3._1;
+﻿using Figures;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -248,6 +248,109 @@ namespace ParsersLibrary
             }
 
             return new FilmTriangle(A, B, C);
+        }
+
+        public void ParsePaperCircleAsXmlNode(StreamWriter writer, PaperCircle paperCircle)
+        {
+            try
+            {
+                writer.WriteLine("\t<PaperCircle>");
+                writer.WriteLine("\t\t<R>{0}</R>", paperCircle.R);
+                writer.WriteLine("\t\t<Color>{0}</Color>", paperCircle.Color);
+                writer.WriteLine("\t</PaperCircle>");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ParsePaperRectangleAsXmlNode(StreamWriter writer, PaperRectangle paperRectangle)
+        {
+            try
+            {
+                writer.WriteLine("\t<PaperRectangle>");
+                writer.WriteLine("\t\t<A>{0}</A>", paperRectangle.A);
+                writer.WriteLine("\t\t<B>{0}</B>", paperRectangle.B);
+                writer.WriteLine("\t\t<C>{0}</C>", paperRectangle.C);
+                writer.WriteLine("\t\t<D>{0}</D>", paperRectangle.D);
+                writer.WriteLine("\t\t<Color>{0}</Color>", paperRectangle.Color);
+                writer.WriteLine("\t</PaperRectangle>");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ParsePaperTriangleAsXmlNode(StreamWriter writer, PaperTriangle paperTriangle)
+        {
+            try
+            {
+                writer.WriteLine("\t<PaperTriangle>");
+                writer.WriteLine("\t\t<A>{0}</A>", paperTriangle.A);
+                writer.WriteLine("\t\t<B>{0}</B>", paperTriangle.B);
+                writer.WriteLine("\t\t<C>{0}</C>", paperTriangle.C);
+                writer.WriteLine("\t\t<Color>{0}</Color>", paperTriangle.Color);
+                writer.WriteLine("\t</PaperTriangle>");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ParseFilmCircleAsXmlNode(StreamWriter writer, FilmCircle filmCircle)
+        {
+            try
+            {
+                writer.WriteLine("\t<FilmCircle>");
+                writer.WriteLine("\t\t<R>{0}</R>", filmCircle.R);
+                writer.WriteLine("\t</FilmCircle>");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ParseFilmRectangleAsXmlNode(StreamWriter writer, FilmRectangle filmRectangle)
+        {
+            try
+            {
+                writer.WriteLine("\t<FilmRectangle>");
+                writer.WriteLine("\t\t<A>{0}</A>", filmRectangle.A);
+                writer.WriteLine("\t\t<B>{0}</B>", filmRectangle.B);
+                writer.WriteLine("\t\t<C>{0}</C>", filmRectangle.C);
+                writer.WriteLine("\t\t<D>{0}</D>", filmRectangle.D);
+                writer.WriteLine("\t</FilmRectangle>");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ParseFilmTriangleAsXmlNode(StreamWriter writer, FilmTriangle filmTriangle)
+        {
+            try
+            {
+                writer.WriteLine("\t<FilmTriangle>");
+                writer.WriteLine("\t\t<A>{0}</A>", filmTriangle.A);
+                writer.WriteLine("\t\t<B>{0}</B>", filmTriangle.B);
+                writer.WriteLine("\t\t<C>{0}</C>", filmTriangle.C);
+                writer.WriteLine("\t</FilmTriangle>");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

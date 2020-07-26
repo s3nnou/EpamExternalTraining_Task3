@@ -1,5 +1,5 @@
 ﻿using CollectionLibrary;
-using epam_task_3._1;
+using Figures;
 using ParsersLibrary;
 using System;
 using System.IO;
@@ -7,9 +7,9 @@ using System.Xml;
 
 namespace FileExtensionsLibrary
 {
-    public class FileExtensions
+    public class FileReader
     {
-        public Box ReadXML(string path)
+        public Box ReadXmlByXmlTextReader(string path)
         {
             using (XmlTextReader reader = new XmlTextReader(path))
             {
@@ -54,17 +54,11 @@ namespace FileExtensionsLibrary
                     else hasMore = reader.Read();
                 }
 
-
                 return box;
             }
         }
 
-        public void ReadXML(string path, Material material)
-        {
-
-        }
-
-        public Box ReadXMLStream(string path)
+        public Box ReadXmlByStreamReader(string path)
         {
             string line;
             int i = 0;
@@ -113,10 +107,7 @@ namespace FileExtensionsLibrary
                     }
                 }
             }
-
-
                 return box;
-            
         }
     }
 }

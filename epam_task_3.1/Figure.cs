@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace epam_task_3._1
+namespace Figures
 {
     public abstract class Figure
     {
