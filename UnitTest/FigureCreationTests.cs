@@ -1,6 +1,6 @@
 ﻿using Figures;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System;
 
 namespace UnitTest
 {
@@ -1186,6 +1186,27 @@ namespace UnitTest
             FilmRectangle ex_rectangle = new FilmRectangle(ex_a, ex_b, ex_c, ex_d);
 
             Assert.IsTrue(ex_rectangle.Equals(t_rectangle));
+        }
+
+        [TestMethod]
+        public void PaintTest()
+        {
+            PaperCircle t_paperCirlce = new PaperCircle(5, Color.blue);
+
+            t_paperCirlce.Paint(Color.green);
+
+            Assert.IsTrue(t_paperCirlce.IsColoredAgain);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void PaintingPaintedFigureTest()
+        {
+            PaperCircle t_paperCirlce = new PaperCircle(5, Color.blue);
+
+            t_paperCirlce.Paint(Color.green);
+
+            t_paperCirlce.Paint(Color.red);
         }
     }
 }
