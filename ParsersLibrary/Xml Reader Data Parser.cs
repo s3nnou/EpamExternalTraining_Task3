@@ -160,7 +160,6 @@ namespace ParsersLibrary
                         D = double.Parse(reader.ReadString());
                         stop++;
                         break;
-                        break;
                 }
             }
 
@@ -206,6 +205,24 @@ namespace ParsersLibrary
                 writer.WriteElementString(nameof(PaperCircle.R), paperCircle.R.ToString());
                 writer.WriteElementString(nameof(PaperCircle.Color), paperCircle.Color.ToString());
                 writer.WriteEndElement();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ParsePaperRectangleAsXmlNode(XmlTextWriter writer, PaperRectangle paperRectangle)
+        {
+            try
+            {
+                writer.WriteStartElement(nameof(PaperRectangle));
+                writer.WriteElementString(nameof(PaperRectangle.A), paperRectangle.A.ToString());
+                writer.WriteElementString(nameof(PaperRectangle.B), paperRectangle.B.ToString());
+                writer.WriteElementString(nameof(PaperRectangle.C), paperRectangle.C.ToString());
+                writer.WriteElementString(nameof(PaperRectangle.D), paperRectangle.D.ToString());
+                writer.WriteElementString(nameof(PaperCircle.Color), paperRectangle.Color.ToString());
+                writer.WriteEndElement();
 
             }
             catch (Exception ex)
@@ -214,91 +231,69 @@ namespace ParsersLibrary
             }
         }
 
-        //public void ParsePaperRectangleAsXmlNode(XmlTextWriter writer, PaperRectangle paperRectangle)
-        //{
-        //    try
-        //    {
-        //        writer.WriteLine("\t<PaperRectangle>");
-        //        writer.WriteLine("\t\t<A>{0}</A>", paperRectangle.A);
-        //        writer.WriteLine("\t\t<B>{0}</B>", paperRectangle.B);
-        //        writer.WriteLine("\t\t<C>{0}</C>", paperRectangle.C);
-        //        writer.WriteLine("\t\t<D>{0}</D>", paperRectangle.D);
-        //        writer.WriteLine("\t\t<Color>{0}</Color>", paperRectangle.Color);
-        //        writer.WriteLine("\t</PaperRectangle>");
+        public void ParsePaperTriangleAsXmlNode(XmlTextWriter writer, PaperTriangle paperTriangle)
+        {
+            try
+            {
+                writer.WriteStartElement(nameof(PaperTriangle));
+                writer.WriteElementString(nameof(PaperTriangle.A), paperTriangle.A.ToString());
+                writer.WriteElementString(nameof(PaperTriangle.B), paperTriangle.B.ToString());
+                writer.WriteElementString(nameof(PaperTriangle.C), paperTriangle.C.ToString());
+                writer.WriteElementString(nameof(PaperTriangle.Color), paperTriangle.Color.ToString());
+                writer.WriteEndElement();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public void ParseFilmCircleAsXmlNode(XmlTextWriter writer, FilmCircle filmCircle)
+        {
+            try
+            {
+                writer.WriteStartElement(nameof(FilmCircle));
+                writer.WriteElementString(nameof(FilmCircle.R), filmCircle.R.ToString());
+                writer.WriteEndElement();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        //public void ParsePaperTriangleAsXmlNode(XmlTextWriter writer, PaperTriangle paperTriangle)
-        //{
-        //    try
-        //    {
-        //        writer.WriteLine("\t<PaperTriangle>");
-        //        writer.WriteLine("\t\t<A>{0}</A>", paperTriangle.A);
-        //        writer.WriteLine("\t\t<B>{0}</B>", paperTriangle.B);
-        //        writer.WriteLine("\t\t<C>{0}</C>", paperTriangle.C);
-        //        writer.WriteLine("\t\t<Color>{0}</Color>", paperTriangle.Color);
-        //        writer.WriteLine("\t</PaperTriangle>");
+        public void ParseFilmRectangleAsXmlNode(XmlTextWriter writer, FilmRectangle filmRectangle)
+        {
+            try
+            {
+                writer.WriteStartElement(nameof(FilmRectangle));
+                writer.WriteElementString(nameof(FilmRectangle.A), filmRectangle.A.ToString());
+                writer.WriteElementString(nameof(FilmRectangle.B), filmRectangle.B.ToString());
+                writer.WriteElementString(nameof(FilmRectangle.C), filmRectangle.C.ToString());
+                writer.WriteElementString(nameof(FilmRectangle.D), filmRectangle.D.ToString());
+                writer.WriteEndElement();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        //public void ParseFilmCircleAsXmlNode(XmlTextWriter writer, FilmCircle filmCircle)
-        //{
-        //    try
-        //    {
-        //        writer.WriteLine("\t<FilmCircle>");
-        //        writer.WriteLine("\t\t<R>{0}</R>", filmCircle.R);
-        //        writer.WriteLine("\t</FilmCircle>");
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        //public void ParseFilmRectangleAsXmlNode(XmlTextWriter writer, FilmRectangle filmRectangle)
-        //{
-        //    try
-        //    {
-        //        writer.WriteLine("\t<FilmRectangle>");
-        //        writer.WriteLine("\t\t<A>{0}</A>", filmRectangle.A);
-        //        writer.WriteLine("\t\t<B>{0}</B>", filmRectangle.B);
-        //        writer.WriteLine("\t\t<C>{0}</C>", filmRectangle.C);
-        //        writer.WriteLine("\t\t<D>{0}</D>", filmRectangle.D);
-        //        writer.WriteLine("\t</FilmRectangle>");
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        //public void ParseFilmTriangleAsXmlNode(XmlTextWriter writer, FilmTriangle filmTriangle)
-        //{
-        //    try
-        //    {
-        //        writer.WriteLine("\t<FilmTriangle>");
-        //        writer.WriteLine("\t\t<A>{0}</A>", filmTriangle.A);
-        //        writer.WriteLine("\t\t<B>{0}</B>", filmTriangle.B);
-        //        writer.WriteLine("\t\t<C>{0}</C>", filmTriangle.C);
-        //        writer.WriteLine("\t</FilmTriangle>");
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public void ParseFilmTriangleAsXmlNode(XmlTextWriter writer, FilmTriangle filmTriangle)
+        {
+            try
+            {
+                writer.WriteStartElement(nameof(FilmTriangle));
+                writer.WriteElementString(nameof(FilmTriangle.A), filmTriangle.A.ToString());
+                writer.WriteElementString(nameof(FilmTriangle.B), filmTriangle.B.ToString());
+                writer.WriteElementString(nameof(FilmTriangle.C), filmTriangle.C.ToString());
+                writer.WriteEndElement();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

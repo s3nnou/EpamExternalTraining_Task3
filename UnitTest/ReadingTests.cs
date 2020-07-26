@@ -7,10 +7,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class ReadingTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Reading1()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -28,7 +28,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void Reading2()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -46,7 +46,7 @@ namespace UnitTest
 
         }
         [TestMethod]
-        public void TestMethod3()
+        public void Reading3()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -66,7 +66,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod4()
+        public void Reading4()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -87,7 +87,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod5()
+        public void Reading5()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -109,7 +109,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod6()
+        public void Reading6()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -131,7 +131,7 @@ namespace UnitTest
 
         }
         [TestMethod]
-        public void TestMethod7()
+        public void Reading7()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -148,7 +148,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod8()
+        public void Reading8()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -166,7 +166,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod9()
+        public void Reading9()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -185,7 +185,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod10()
+        public void Reading10()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -206,7 +206,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod11()
+        public void Reading11()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -229,7 +229,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod12()
+        public void Reading12()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 
@@ -252,7 +252,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod13()
+        public void Reading13()
         {
             string path = @"..\..\..\..\epam_task_3.1\Box.xml";
 

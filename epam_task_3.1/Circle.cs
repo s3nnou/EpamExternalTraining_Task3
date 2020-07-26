@@ -52,7 +52,7 @@ namespace Figures
         {
             if(figure is IPaper)
             {
-                if(!(figure.Area < (Math.PI * Math.Pow(_r, 2))))
+                if((figure.Area < (Math.PI * Math.Pow(_r, 2))))
                 {
                     throw new Exception("Cannot create a bigger Figure from a smaller Figure");
                 }
@@ -123,7 +123,7 @@ namespace Figures
         {
             if (figure is IFilm)
             {
-                if (!(figure.Area < (Math.PI * Math.Pow(_r, 2))))
+                if ((figure.Area < (Math.PI * Math.Pow(_r, 2))))
                 {
                     throw new Exception("Cannot create a bigger Figure from a smaller Figure");
                 }

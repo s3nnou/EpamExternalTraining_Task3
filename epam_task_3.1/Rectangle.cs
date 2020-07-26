@@ -64,7 +64,7 @@ namespace Figures
         {
             if (figure is IPaper)
             {
-                if (!(figure.Area < (A * B)))
+                if ((figure.Area < (A * B)))
                 {
                     throw new Exception("Cannot create a bigger Figure from a smaller Figure");
                 }
@@ -130,6 +130,21 @@ namespace Figures
         public FilmRectangle(double A, double B, double C, double D) : base(A, B, C, D)
         {
 
+        }
+
+        public FilmRectangle(double A, double B, double C, double D, Figure figure) : base(A, B, C, D)
+        {
+            if (figure is IFilm)
+            {
+                if ((figure.Area < (A * B)))
+                {
+                    throw new Exception("Cannot create a bigger Figure from a smaller Figure");
+                }
+            }
+            else
+            {
+                throw new Exception("Cannot create a Paper form a Film");
+            }
         }
 
         public override bool Equals(object obj)

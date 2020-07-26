@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Figures>
-	<PaperCircle>
+	<FilmCircle>
 		<R>5</R>
-		<Color>red</Color>
-	</PaperCircle>
-	<PaperRectangle>
+	</FilmCircle>
+	<FilmRectangle>
 		<A>1</A>
 		<B>1</B>
 		<C>1</C>
 		<D>1</D>
-		<Color>red</Color>
-	</PaperRectangle>
-	<PaperTriangle>
+	</FilmRectangle>
+	<FilmTriangle>
 		<A>1</A>
 		<B>1</B>
 		<C>1</C>
-		<Color>red</Color>
-	</PaperTriangle>
+	</FilmTriangle>
 </Figures>

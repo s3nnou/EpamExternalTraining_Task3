@@ -62,7 +62,7 @@ namespace Figures
         {
             if (figure is IPaper)
             {
-                if (!(figure.Area < (Math.Sqrt(((A + B + C) / 2) * (((A + B + C) / 2) - A) * (((A + B + C) / 2) - B) * (((A + B + C) / 2) - C)))))
+                if ((figure.Area < (Math.Sqrt(((A + B + C) / 2) * (((A + B + C) / 2) - A) * (((A + B + C) / 2) - B) * (((A + B + C) / 2) - C)))))
                 {
                     throw new Exception("Cannot create a bigger Figure from a smaller Figure");
                 }
@@ -128,6 +128,25 @@ namespace Figures
         public FilmTriangle(double A, double B, double C) : base(A, B, C)
         {
 
+        }
+
+        public FilmTriangle(double A, double B, double C, Figure figure) : base(A, B, C)
+        {
+            if (figure is IFilm)
+            {
+                if ((figure.Area < (Math.Sqrt(((A + B + C) / 2) * (((A + B + C) / 2) - A) * (((A + B + C) / 2) - B) * (((A + B + C) / 2) - C)))))
+                {
+                    throw new Exception("Cannot create a bigger Figure from a smaller Figure");
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                throw new Exception("Cannot create a Paper form a Film");
+            }
         }
 
         public override bool Equals(object obj)
