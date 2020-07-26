@@ -7,8 +7,16 @@ using System.Xml;
 
 namespace FileExtensionsLibrary
 {
+    /// <summary>
+    /// Class for a work with a reading xml files 
+    /// </summary>
     public class FileReader
     {
+        /// <summary>
+        /// Reads Xml file by XmlTextReader
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>new Box</returns>
         public Box ReadXmlByXmlTextReader(string path)
         {
             using (XmlTextReader reader = new XmlTextReader(path))
@@ -58,6 +66,11 @@ namespace FileExtensionsLibrary
             }
         }
 
+        /// <summary>
+        /// Reads Xml file by StreamReader
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>new Box</returns>
         public Box ReadXmlByStreamReader(string path)
         {
             string line;

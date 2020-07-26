@@ -1,4 +1,7 @@
-﻿public enum Material
+﻿/// <summary>
+/// Represents metarials.
+/// </summary>
+public enum Material
 {
     none,
     film,

@@ -4,15 +4,23 @@ using System.Xml;
 
 namespace ParsersLibrary
 {
+    /// <summary>
+    /// Class for a parsing data with a XMLTextReader orXMLTextWriter
+    /// </summary>
     public class XMLTextReaderDataParser
     {
+        /// <summary>
+        /// Parses data as a PaperCircle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new PaperCircle</returns>
         public PaperCircle ParseAsPaperCircle(XmlTextReader reader)
         {
             double r = 0;
             Color color = Color.none;
-            int stop = 0;
+            int step = 0;
 
-            while (stop != 2)
+            while (step != 2)
             {
                 reader.Read();
 
@@ -20,11 +28,11 @@ namespace ParsersLibrary
                 {
                     case "R":
                         r = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "Color":
                         color = (Color)Enum.Parse(typeof(Color), reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                 }
             }
@@ -32,6 +40,11 @@ namespace ParsersLibrary
             return new PaperCircle(r, color);
         }
 
+        /// <summary>
+        /// Parses data as a PaperRectangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new PaperRectangle</returns>
         public PaperRectangle ParseAsPaperRectangle(XmlTextReader reader)
         {
             double A = 0;
@@ -39,9 +52,9 @@ namespace ParsersLibrary
             double C = 0;
             double D = 0;
             Color color = Color.none;
-            int stop = 0;
+            int step = 0;
 
-            while (stop != 5)
+            while (step != 5)
             {
                 reader.Read();
 
@@ -49,23 +62,23 @@ namespace ParsersLibrary
                 {
                     case "A":
                         A = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "B":
                         B = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "C":
                         C = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "D":
                         D = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "Color":
                         color = (Color)Enum.Parse(typeof(Color), reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                 }
             }
@@ -73,15 +86,20 @@ namespace ParsersLibrary
             return new PaperRectangle(A, B, C , D, color);
         }
 
+        /// <summary>
+        /// Parses data as a PaperTriangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new PaperTriangle</returns>
         public PaperTriangle ParseAsPaperTriangle(XmlTextReader reader)
         {
             double A = 0;
             double B = 0;
             double C = 0;
             Color color = Color.none;
-            int stop = 0;
+            int step = 0;
 
-            while (stop != 4)
+            while (step != 4)
             {
                 reader.Read();
 
@@ -89,19 +107,19 @@ namespace ParsersLibrary
                 {
                     case "A":
                         A = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "B":
                         B = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "C":
                         C = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "Color":
                         color = (Color)Enum.Parse(typeof(Color), reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                 }
             }
@@ -109,12 +127,17 @@ namespace ParsersLibrary
             return new PaperTriangle(A, B, C, color);
         }
 
+        /// <summary>
+        /// Parses data as a FilmCircle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new FilmCircle</returns>
         public FilmCircle ParseAsFilmCircle(XmlTextReader reader)
         {
             double r = 0;
-            int stop = 0;
+            int step = 0;
 
-            while (stop != 1)
+            while (step != 1)
             {
                 reader.Read();
 
@@ -122,7 +145,7 @@ namespace ParsersLibrary
                 {
                     case "R":
                         r = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                 }
             }
@@ -130,15 +153,20 @@ namespace ParsersLibrary
             return new FilmCircle(r);
         }
 
+        /// <summary>
+        /// Parses data as a FilmRectangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new FilmRectangle</returns>
         public FilmRectangle ParseAsFilmRectangle(XmlTextReader reader)
         {
             double A = 0;
             double B = 0;
             double C = 0;
             double D = 0;
-            int stop = 0;
+            int step = 0;
 
-            while (stop != 4)
+            while (step != 4)
             {
                 reader.Read();
 
@@ -146,19 +174,19 @@ namespace ParsersLibrary
                 {
                     case "A":
                         A = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "B":
                         B = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "C":
                         C = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "D":
                         D = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                 }
             }
@@ -166,14 +194,19 @@ namespace ParsersLibrary
             return new FilmRectangle(A, B, C, D);
         }
 
+        /// <summary>
+        /// Parses data as a FilmTriangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new FilmTriangle</returns>
         public FilmTriangle ParseAsFilmTriangle(XmlTextReader reader)
         {
             double A = 0;
             double B = 0;
             double C = 0;
-            int stop = 0;
+            int step = 0;
 
-            while (stop != 3)
+            while (step != 3)
             {
                 reader.Read();
 
@@ -181,15 +214,15 @@ namespace ParsersLibrary
                 {
                     case "A":
                         A = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "B":
                         B = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                     case "C":
                         C = double.Parse(reader.ReadString());
-                        stop++;
+                        step++;
                         break;
                 }
             }
@@ -197,6 +230,11 @@ namespace ParsersLibrary
             return new FilmTriangle(A, B, C);
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParsePaperCircleAsXmlNode(XmlTextWriter writer, PaperCircle paperCircle)
         {
             try
@@ -212,6 +250,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParsePaperRectangleAsXmlNode(XmlTextWriter writer, PaperRectangle paperRectangle)
         {
             try
@@ -231,6 +274,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParsePaperTriangleAsXmlNode(XmlTextWriter writer, PaperTriangle paperTriangle)
         {
             try
@@ -248,6 +296,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParseFilmCircleAsXmlNode(XmlTextWriter writer, FilmCircle filmCircle)
         {
             try
@@ -262,6 +315,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParseFilmRectangleAsXmlNode(XmlTextWriter writer, FilmRectangle filmRectangle)
         {
             try
@@ -280,6 +338,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParseFilmTriangleAsXmlNode(XmlTextWriter writer, FilmTriangle filmTriangle)
         {
             try

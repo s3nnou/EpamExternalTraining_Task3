@@ -5,8 +5,17 @@ using System.Text;
 
 namespace Figures
 {
+    /// <summary>
+    /// Base class for a Triangle
+    /// </summary>
     public class Triangle:Figure
     {
+        /// <summary>
+        /// Triangle constructor
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
         public Triangle(double a, double b, double c)
         {
             if (a > 0 && b > 0 && c > 0)
@@ -27,11 +36,24 @@ namespace Figures
                 throw new Exception("Negative sides cannot exist");
             }
         }
-
+        /// <summary>
+        /// A side Property
+        /// </summary>
         public double A { get; set ; }
+
+        /// <summary>
+        /// B side Property
+        /// </summary>
         public double B { get; set; }
+
+        /// <summary>
+        /// C side Property
+        /// </summary>
         public double C { get; set; }
 
+        /// <summary>
+        /// Area Property
+        /// </summary>
         public override double Area
         {
             get
@@ -41,6 +63,9 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Perimeter Property
+        /// </summary>
         public override double Perimeter
         {
             get
@@ -48,16 +73,42 @@ namespace Figures
                 return A + B + C;
             }
         }
+
+        /// <summary>
+        /// Displays an information about a Figure
+        /// </summary>
+        /// <returns>Information</returns>
+        public override string ToString()
+        {
+            return string.Format($"Figure: {GetType().Name}\n" + $"A: {A}\n" + $"B: {B}\n" + $"C: {C}\n"  + $"Area: {Area}\n" + $"Perimeter: {Perimeter}");
+        }
     }
 
+    /// <summary>
+    /// Triangle from a paper. Child of the Triangle and IPaper
+    /// </summary>
     public class PaperTriangle: Triangle, IPaper
     {
+        /// <summary>
+        /// PaperTriangle constructor
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="C"></param>
+        /// <param name="color"></param>
         public PaperTriangle(double A, double B, double C, Color color) : base(A, B, C)
         {
             Color = color;
             IsColoredAgain = false;
         }
 
+        /// <summary>
+        /// PaperTriangle Construtor from another Figure
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="C"></param>
+        /// <param name="figure"></param>
         public PaperTriangle(double A, double B, double C, Figure figure) : base(A, B, C)
         {
             if (figure is IPaper)
@@ -78,10 +129,20 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Color Property
+        /// </summary>
         public Color Color { get; set; }
 
+        /// <summary>
+        /// Colored State Property
+        /// </summary>
         public bool IsColoredAgain { get; set; }
 
+        /// <summary>
+        /// Paints Figure to the another color for a once
+        /// </summary>
+        /// <param name="newColor"></param>
         public void Paint(Color newColor)
         {
             if (!IsColoredAgain)
@@ -96,6 +157,11 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Finds equal Object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>true - if it was found, if not - false</returns>
         public override bool Equals(object obj)
         {
             if (obj is PaperTriangle)
@@ -117,19 +183,48 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Calculates Hashcode
+        /// </summary>
+        /// <returns>Hashcode</returns>
         public override int GetHashCode()
         {
             return A.GetHashCode() ^ B.GetHashCode() ^ C.GetHashCode() ^ Color.GetHashCode();
         }
+
+        /// <summary>
+        /// Displays an information about a Figure
+        /// </summary>
+        /// <returns>Information</returns>
+        public override string ToString()
+        {
+            return base.ToString() + string.Format($"Meterial: Paper\n" + $"Color: {Color}\n" + $"Was painted twice: {IsColoredAgain}"); 
+        }
     }
 
+    /// <summary>
+    /// Triangle from a Film. Child of the Triangle and IFilm
+    /// </summary>
     public class FilmTriangle : Triangle, IFilm
     {
+        /// <summary>
+        /// FilmTriangle constructor
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="C"></param>
         public FilmTriangle(double A, double B, double C) : base(A, B, C)
         {
 
         }
 
+        /// <summary>
+        /// FilmTriangle constructor from another figure
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="C"></param>
+        /// <param name="figure"></param>
         public FilmTriangle(double A, double B, double C, Figure figure) : base(A, B, C)
         {
             if (figure is IFilm)
@@ -149,6 +244,11 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Find equal Object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>true - if it was found, if not - false</returns>
         public override bool Equals(object obj)
         {
             if (obj is FilmTriangle)
@@ -170,10 +270,22 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Calculates Hashcode
+        /// </summary>
+        /// <returns>Hashcode</returns>
         public override int GetHashCode()
         {
             return A.GetHashCode() ^ B.GetHashCode() ^ C.GetHashCode();
         }
 
+        /// <summary>
+        /// Displays an information about a Figure
+        /// </summary>
+        /// <returns>Information</returns>
+        public override string ToString()
+        {
+            return base.ToString() + string.Format($"Meterial: Film");
+        }
     }
 }

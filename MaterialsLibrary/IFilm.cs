@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MaterialsLibrary
+﻿namespace MaterialsLibrary
 {
+    /// <summary>
+    /// Interface for a Film Figures
+    /// </summary>
     public interface IFilm
     {
 

@@ -1,4 +1,7 @@
-﻿public enum Color
+﻿/// <summary>
+/// Represents colors.
+/// </summary>
+public enum Color
 {
     none,
     red,

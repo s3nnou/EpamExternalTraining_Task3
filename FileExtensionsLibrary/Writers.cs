@@ -3,15 +3,21 @@ using Figures;
 using MaterialsLibrary;
 using ParsersLibrary;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Xml;
 
 namespace FileExtensionsLibrary
 {
+    /// <summary>
+    /// Class for a work with writing in a file
+    /// </summary>
     public class FileWriter
     {
+        /// <summary>
+        /// Writes data from the box into a file by a StreamWriter
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="path"></param>
         public void WriteFiguresByStreamWriter(Box box, string path)
         {
             using (StreamWriter writer = new StreamWriter(path))
@@ -63,6 +69,12 @@ namespace FileExtensionsLibrary
 
         }
 
+        /// <summary>
+        /// Writes data of a only one material figures from the box into a file by StreamWriter
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="material"></param>
+        /// <param name="path"></param>
         public void WriteFiguresByStreamWriter(Box box, Material material, string path)
         {
             using (StreamWriter writer = new StreamWriter(path))
@@ -133,6 +145,11 @@ namespace FileExtensionsLibrary
 
         }
 
+        /// <summary>
+        /// Writes data from the box into a file by XmlTextWriter
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="path"></param>
         public void WriteFiguresByXmlTextWriter(Box box, string path)
         {
             using(XmlTextWriter writer = new XmlTextWriter(path, System.Text.Encoding.UTF8))
@@ -186,6 +203,12 @@ namespace FileExtensionsLibrary
             }
         }
 
+        /// <summary>
+        /// Writes data of a only one material figures from the box into a file by XmlTextWriter
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="material"></param>
+        /// <param name="path"></param>
         public void WriteFiguresByXmlTextWriter(Box box, Material material, string path)
         {
             using (XmlTextWriter writer = new XmlTextWriter(path, System.Text.Encoding.UTF8))

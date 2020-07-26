@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace CollectionLibrary
 {
+    /// <summary>
+    /// Girl's box. Collection of a figures. 
+    /// </summary>
     public class Box
     {
         private Figure[] content = new Figure[20];
@@ -24,6 +27,9 @@ namespace CollectionLibrary
 
         public Figure[] Items => content;
 
+        /// <summary>
+        /// Returns actual quantity of a figures
+        /// </summary>
         public int Size
         {
             get
@@ -45,8 +51,14 @@ namespace CollectionLibrary
             }
         }
 
+        /// <summary>
+        /// Adds new Figure to the Box
+        /// </summary>
+        /// <param name="figure"></param>
         public void Add(Figure figure)
         {
+            int index = 0;
+
             if(Size == 20)
             {
                 throw new Exception("Box is full");
@@ -55,16 +67,28 @@ namespace CollectionLibrary
             {
                 for (int i = 0; i < content.Length; i++)
                 {
+                    if(content[i] == null)
+                    {
+                        index = i;
+                        break;
+                    }
+
                     if (this[i].Equals(figure))
                     {
                         throw new Exception("Only uniqe fugires can be put in the box");
                     }
                 }
 
-                content[Size - 1] = figure;
+                content[index] = figure;
+
             }
         }
 
+        /// <summary>
+        /// Shows any figure form the box.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>Taken Figure</returns>
         public Figure Show(int index)
         {
             if(content[index] != null)
@@ -73,10 +97,15 @@ namespace CollectionLibrary
             }
             else
             {
-                throw new Exception("There are no any figure with this index");
+                throw new ArgumentException();
             }
         }
 
+        /// <summary>
+        /// Takes any figure from the box and removes it form the collection completely.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>taken figure</returns>
         public Figure Take(int index)
         {
             
@@ -104,15 +133,20 @@ namespace CollectionLibrary
             }
             else
             {
-                throw new Exception("There are no any figure with this index");
+                throw new ArgumentException();
             }
         }
 
+        /// <summary>
+        /// Replaces any figure with another by its index.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="figure"></param>
         public void Set(int index, Figure figure)
         {
-            if (index > 20)
+            if (index > 20 || index < 0)
             {
-                throw new Exception("Out of bounce");
+                throw new IndexOutOfRangeException();
             }
             else
             {
@@ -120,6 +154,11 @@ namespace CollectionLibrary
             }
         }
 
+        /// <summary>
+        /// Finds equal figure
+        /// </summary>
+        /// <param name="figure"></param>
+        /// <returns>true - if there are equal figure, else - if not</returns>
         public bool Find(Figure figure)
         {
             for (int i = 0; i < Size; i++)
@@ -132,7 +171,10 @@ namespace CollectionLibrary
 
             return false;
         }
-
+        /// <summary>
+        /// Calculates total area.
+        /// </summary>
+        /// <returns>Area</returns>
         public double GetTotalArea()
         {
             if (Size == 0)
@@ -152,6 +194,10 @@ namespace CollectionLibrary
             }
         }
 
+        /// <summary>
+        /// Calculates total perimeter
+        /// </summary>
+        /// <returns>perimeter</returns>
         public double GetTotalPerimeter()
         {
             if (Size == 0)
@@ -171,6 +217,10 @@ namespace CollectionLibrary
             }
         }
 
+        /// <summary>
+        /// Returns all circles from the collection
+        /// </summary>
+        /// <returns>All cricles - if they exsist, if not - null</returns>
         public List<Figure> GetCircles()
         {
             List<Figure> takenFigures = new List<Figure>();
@@ -193,6 +243,10 @@ namespace CollectionLibrary
             }
         }
 
+        /// <summary>
+        /// Returns all film figures from the collection
+        /// </summary>
+        /// <returns>All film figures - if they exsist, if not - null</returns>
         public List<Figure> GetFilmFigures()
         {
             List<Figure> takenFigures = new List<Figure>();
@@ -215,9 +269,69 @@ namespace CollectionLibrary
             }
         }
 
+        /// <summary>
+        /// Displays an information about a Box 
+        /// </summary>
+        /// <returns>Information</returns>
+        public override string ToString()
+        {
+            string str  = "What in the box:";
+
+            foreach (var item in Items)
+            {
+                if(item != null)
+                {
+                    str += item.ToString() + "\n";
+
+                }
+                else
+                {
+                    str += "Valid slot" + "\n";
+                }
+            }
+
+            return str;
+        }
+
+        /// <summary>
+        /// Find equal Object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>true - if all array members were equal, if not - false</returns>
+        public override bool Equals(object obj)
+        {
+
+            if (obj is Box)
+            {
+                Box box = obj as Box;
+
+                for (var i = 0; i < Size; i++)
+                {
+                    if (!Items[i].Equals(box.Items[i]))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Returns hashcode
+        /// </summary>
+        /// <returns>hashcode</returns>
         public override int GetHashCode()
         {
-            return (content.GetHashCode() ^ Size.GetHashCode());
+            int sum = 0;
+            foreach(var item in Items)
+            {
+                sum += item.GetHashCode();
+            }
+
+            return (content.GetHashCode() ^ sum ^  Size.GetHashCode());
         }
     }
 }

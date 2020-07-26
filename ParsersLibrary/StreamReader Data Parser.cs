@@ -1,42 +1,53 @@
 ﻿using Figures;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace ParsersLibrary
 {
+    /// <summary>
+    /// Class for a parsing data with a StreamWriter or StreamReader
+    /// </summary>
     public class StreamReaderDataParser
     {
+        /// <summary>
+        /// Parses data as a PaperCircle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new PaperCircle</returns>
         public PaperCircle ParseAsPaperCircle(StreamReader reader)
         {
-            int stop = 0;
+            int step = 0;
             string[] info;
             double r = 0;
             Color color = Color.none;
             string line = reader.ReadLine();
 
-            while (stop != 2)
+            while (step != 2)
             {
                 line = line.TrimStart();
                 info = line.Split('>', '<');
 
-                switch (stop)
+                switch (step)
                 {
                     case 0:
                         r = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
                         line = reader.ReadLine();
                         break;
                     case 1:
                         color = (Color)Enum.Parse(typeof(Color), info[2]);
-                        stop++;
+                        step++;
                         break;
                 }
             }
             return new PaperCircle(r, color);
         }
 
+        /// <summary>
+        /// Parses data as a PaperRectangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new PaperRectangle</returns>
         public PaperRectangle ParseAsPaperRectangle(StreamReader reader)
         {
             double A = 0;
@@ -44,44 +55,44 @@ namespace ParsersLibrary
             double C = 0;
             double D = 0;
             Color color = Color.none;
-            int stop = 0;
+            int step = 0;
             string[] info;
 
             string line = reader.ReadLine();
-            while (stop != 5)
+            while (step != 5)
             {
                 line = line.TrimStart();
                 info = line.Split('>', '<');
 
-                switch (stop)
+                switch (step)
                 {
                     case 0:
                         A = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
                         line = reader.ReadLine();
 
                         break;
                     case 1:
                         B = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 2:
                         C = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 3:
                         D = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 4:
                         color = (Color)Enum.Parse(typeof(Color), info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
@@ -91,44 +102,49 @@ namespace ParsersLibrary
             return new PaperRectangle(A, B, C, D, color);
         }
 
+        /// <summary>
+        /// Parses data as a PaperTriangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new PaperTriangle</returns>
         public PaperTriangle ParseAsPaperTriangle(StreamReader reader)
         {
             double A = 0;
             double B = 0;
             double C = 0;
             Color color = Color.none;
-            int stop = 0;
+            int step = 0;
             string[] info;
 
             string line = reader.ReadLine();
-            while (stop != 4)
+            while (step != 4)
             {
                 line = line.TrimStart();
                 info = line.Split('>', '<');
 
-                switch (stop)
+                switch (step)
                 {
                     case 0:
                         A = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
                         line = reader.ReadLine();
 
                         break;
                     case 1:
                         B = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 2:
                         C = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 3:
                         color = (Color)Enum.Parse(typeof(Color), info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
@@ -138,23 +154,28 @@ namespace ParsersLibrary
             return new PaperTriangle(A, B, C, color);
         }
 
+        /// <summary>
+        /// Parses data as a FilmCircle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new FilmCircle</returns>
         public FilmCircle ParseAsFilmCircle(StreamReader reader)
         {
-            int stop = 0;
+            int step = 0;
             string[] info;
             double r = 0;
             string line = reader.ReadLine();
 
-            while (stop != 1)
+            while (step != 1)
             {
                 line = line.TrimStart();
                 info = line.Split('>', '<');
 
-                switch (stop)
+                switch (step)
                 {
                     case 0:
                         r = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
                         line = reader.ReadLine();
                         break;
                 }
@@ -162,44 +183,49 @@ namespace ParsersLibrary
             return new FilmCircle(r);
         }
 
+        /// <summary>
+        /// Parses data as a FilmRectangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new FilmRectangle</returns>
         public FilmRectangle ParseAsFilmRectangle(StreamReader reader)
         {
             double A = 0;
             double B = 0;
             double C = 0;
             double D = 0;
-            int stop = 0;
+            int step = 0;
             string[] info;
 
             string line = reader.ReadLine();
-            while (stop != 4)
+            while (step != 4)
             {
                 line = line.TrimStart();
                 info = line.Split('>', '<');
 
-                switch (stop)
+                switch (step)
                 {
                     case 0:
                         A = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
                         line = reader.ReadLine();
 
                         break;
                     case 1:
                         B = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 2:
                         C = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 3:
                         D = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
@@ -210,37 +236,42 @@ namespace ParsersLibrary
             return new FilmRectangle(A, B, C, D);
         }
 
+        /// <summary>
+        /// Parses data as a FilmTriangle
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>new FilmTriangle</returns>
         public FilmTriangle ParseAsFilmTriangle(StreamReader reader)
         {
             double A = 0;
             double B = 0;
             double C = 0;
-            int stop = 0;
+            int step = 0;
             string[] info;
 
             string line = reader.ReadLine();
-            while (stop != 3)
+            while (step != 3)
             {
                 line = line.TrimStart();
                 info = line.Split('>', '<');
 
-                switch (stop)
+                switch (step)
                 {
                     case 0:
                         A = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
                         line = reader.ReadLine();
 
                         break;
                     case 1:
                         B = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
                     case 2:
                         C = double.Parse(info[2].Trim());
-                        stop++;
+                        step++;
 
                         line = reader.ReadLine();
                         break;
@@ -250,6 +281,11 @@ namespace ParsersLibrary
             return new FilmTriangle(A, B, C);
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParsePaperCircleAsXmlNode(StreamWriter writer, PaperCircle paperCircle)
         {
             try
@@ -266,6 +302,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParsePaperRectangleAsXmlNode(StreamWriter writer, PaperRectangle paperRectangle)
         {
             try
@@ -285,6 +326,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParsePaperTriangleAsXmlNode(StreamWriter writer, PaperTriangle paperTriangle)
         {
             try
@@ -303,6 +349,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParseFilmCircleAsXmlNode(StreamWriter writer, FilmCircle filmCircle)
         {
             try
@@ -318,6 +369,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParseFilmRectangleAsXmlNode(StreamWriter writer, FilmRectangle filmRectangle)
         {
             try
@@ -336,6 +392,11 @@ namespace ParsersLibrary
             }
         }
 
+        /// <summary>
+        /// Parses Object as a Xml Element
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="paperCircle"></param>
         public void ParseFilmTriangleAsXmlNode(StreamWriter writer, FilmTriangle filmTriangle)
         {
             try
