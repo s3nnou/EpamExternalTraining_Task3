@@ -812,7 +812,6 @@ namespace UnitTest
             Color ex_color = Color.red;
             PaperTriangle ex_triangle = new PaperTriangle(ex_a, ex_b, ex_c, ex_color);
 
-
             Assert.IsTrue(ex_triangle.Equals(t_triangle));
         }
 
@@ -832,7 +831,6 @@ namespace UnitTest
             Color ex_color = Color.blue;
             PaperTriangle ex_triangle = new PaperTriangle(ex_a, ex_b, ex_c, ex_color);
 
-
             Assert.IsTrue(ex_triangle.Equals(t_triangle));
         }
 
@@ -845,13 +843,11 @@ namespace UnitTest
             Color t_color = Color.green;
             PaperTriangle t_triangle = new PaperTriangle(t_a, t_b, t_c, t_color);
 
-
             double ex_a = 6;
             double ex_b = 8;
             double ex_c = 10;
             Color ex_color = Color.green;
             PaperTriangle ex_triangle = new PaperTriangle(ex_a, ex_b, ex_c, ex_color);
-
 
             Assert.IsTrue(ex_triangle.Equals(t_triangle));
         }
@@ -887,7 +883,6 @@ namespace UnitTest
             double ex_c = 1;
             FilmTriangle ex_triangle = new FilmTriangle(ex_a, ex_b, ex_c);
 
-
             Assert.IsTrue(ex_triangle.Equals(t_triangle));
         }
 
@@ -904,7 +899,6 @@ namespace UnitTest
             double ex_b = 8;
             double ex_c = 10;
             FilmTriangle ex_triangle = new FilmTriangle(ex_a, ex_b, ex_c);
-
 
             Assert.IsTrue(ex_triangle.Equals(t_triangle));
         }
@@ -926,7 +920,6 @@ namespace UnitTest
             Color ex_color = Color.red;
             PaperCircle ex_circle = new PaperCircle(ex_r, ex_color);
 
-
             Assert.IsTrue(ex_circle.Equals(t_circle));
         }
 
@@ -946,7 +939,6 @@ namespace UnitTest
             double ex_r = 2;
             Color ex_color = Color.red;
             PaperCircle ex_circle = new PaperCircle(ex_r, ex_color);
-
 
             Assert.IsTrue(ex_circle.Equals(t_circle));
         }
@@ -968,7 +960,6 @@ namespace UnitTest
             Color ex_color = Color.red;
             PaperCircle ex_circle = new PaperCircle(ex_r, ex_color);
 
-
             Assert.IsTrue(ex_circle.Equals(t_circle));
         }
 
@@ -986,7 +977,6 @@ namespace UnitTest
 
             double ex_r = 0.4;
             FilmCircle ex_circle = new FilmCircle(ex_r);
-
 
             Assert.IsTrue(ex_circle.Equals(t_circle));
         }
@@ -1006,7 +996,6 @@ namespace UnitTest
             double ex_r = 2;
             FilmCircle ex_circle = new FilmCircle(ex_r);
 
-
             Assert.IsTrue(ex_circle.Equals(t_circle));
         }
 
@@ -1023,9 +1012,7 @@ namespace UnitTest
             FilmCircle t_circle = new FilmCircle(r, t_triangle);
 
             double ex_r = 0.02;
-            Color ex_color = Color.red;
             FilmCircle ex_circle = new FilmCircle(ex_r);
-
 
             Assert.IsTrue(ex_circle.Equals(t_circle));
         }
@@ -1052,7 +1039,6 @@ namespace UnitTest
             double ex_d = 1;
             Color ex_color = Color.red;
             PaperRectangle ex_rectangle = new PaperRectangle(ex_a, ex_b, ex_c, ex_d, ex_color);
-
 
             Assert.IsTrue(ex_rectangle.Equals(t_rectangle));
         }
